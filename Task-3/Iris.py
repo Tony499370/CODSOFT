@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib
 matplotlib.use('Agg')  
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
+
 
 # Load data
 data = pd.read_csv('iris.csv')
@@ -34,7 +34,7 @@ for k in range(1, 21):
         best_score = scores.mean()
         best_k = k
 
-print(f"✅ Best k: {best_k} with cross-validation accuracy: {best_score:.2f}")
+print(f"Best k: {best_k} with cross-validation accuracy: {best_score:.2f}")
 
 # Train final model using best k
 final_pipeline = Pipeline([
@@ -46,7 +46,7 @@ final_pipeline.fit(X_train, y_train)
 # Predict and evaluate
 y_pred = final_pipeline.predict(X_test)
 
-print("\n✅ Final Evaluation:")
+print("\nFinal Evaluation:")
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
